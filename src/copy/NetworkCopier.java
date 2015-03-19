@@ -1,3 +1,5 @@
+package copy;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -12,16 +14,15 @@ import utils.FileUtil;
  */
 public class NetworkCopier {
 
-	private static String networkPath = "https://www.baidu.com";
-	private static String localPath = "D:/A";
+	public static String networkPath = "https://www.baidu.com";
+	public static String localPath = "D:/A";
 	
-	public static void main(String[] args) {
+	public static void copyNetworkFiles(String path) {
 		// 网络地址的分隔符一般都是“/”，需要注意
-		String path = "https://www.baidu.com/img/bdlogo.png";
 		loadFile(path);
 	}
 
-	public static void loadFile(String networkURL) {
+	private static void loadFile(String networkURL) {
 		if (networkURL.indexOf(networkPath) == -1) {
 			return;
 		}

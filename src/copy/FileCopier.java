@@ -1,10 +1,11 @@
+package copy;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.regex.Matcher;
 
 import utils.FileUtil;
-
 
 /**
  * 拷贝目录资源小工具
@@ -15,12 +16,15 @@ public class FileCopier {
 	private static String sourceFolder = "D:/A";
 	private static String targetFolder = "E:/B";
 	
-	public static void main(String[] args) {
+	public static void copyFiles(String srcFolder, String tarFolder) {
+		sourceFolder = srcFolder;
+		targetFolder = tarFolder;
+		
 		// 方法1、Java中的文件分割符号是\，所以有必要做一下转换
 		/*
 		sourceFolder = sourceFolder.replaceAll("/", "\\\\");
 		targetFolder = targetFolder.replaceAll("/", "\\\\");
-		*/
+		 */
 		// 方法2、使用Java提供的API
 		sourceFolder = sourceFolder.replaceAll("/", Matcher.quoteReplacement(File.separator));
 		targetFolder = targetFolder.replaceAll("/", Matcher.quoteReplacement(File.separator));
